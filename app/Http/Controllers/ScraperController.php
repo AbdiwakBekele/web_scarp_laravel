@@ -98,7 +98,7 @@ class ScraperController extends Controller {
     public function testScrap() {
 
         $url = 'https://www.fastpeoplesearch.com/daniel-eyob_id_G-3956879193660365613';
-        $cookieHeader = '_uc_referrer=direct; _gid=GA1.2.1640535721.1707249453; ALLOW_COOKIES=true; _lr_env_src_ats=false; gcid_first=293f37f1-09b6-4b71-92d8-16c5de4e8d0d; _cc_id=f058162eff036db6cbf2a359bffe2cf; __qca=P0-230206700-1707253466055; _au_1d=AU1D-0100-001707282800-HGSQRQTF-AH4E; FCCDCF=%5Bnull%2Cnull%2Cnull%2C%5B%22CP5m9AAP5m9AAEsACBENAmEoAP_gAEPgABBYINJD7D7FbSFCwHpzaLsAMAhHRsCAQoQAAASBAmABQAKQIAQCgkAQFASgBAACAAAAICZBIQAECAAACUAAQAAAAAAEAAAAAAAIIAAAgAEAAAAIAAACAAAAEAAIAAAAEAAAmAgAAIIACAAAhAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAQOhQD2F2K2kKFkPCmQWYAQBCijYEAhQAAAAkCBIAAgAUgQAgFIIAgAIFAAAAAAAAAQEgCQAAQABAAAIACgAAAAAAIAAAAAAAQQAAAAAIAAAAAAAAEAAAAAAAQAAAAIAABEhCAAQQAEAAAAAAAQAAAAAAAAAAABAAA%22%2C%222~2072.70.89.93.108.122.149.196.2253.2299.259.2357.311.313.323.2373.338.358.2415.415.449.2506.2526.486.494.495.2568.2571.2575.540.574.2624.609.2677.864.981.1029.1048.1051.1095.1097.1126.1201.1205.1211.1276.1301.1344.1365.1415.1423.1449.1451.1570.1577.1598.1651.1716.1735.1753.1765.1870.1878.1889.1958~dv.%22%2C%2252DE7854-9ED1-4B47-B736-0C795A31F327%22%5D%5D; _au_last_seen_iab_tcf=1707333927777; pbjs_li_nonid_cst=myypLK4sUw%3D%3D; pbjs_li_nonid=%7B%22nonId%22%3A%22CHILhKM5b8BvKJHFOwxDVRQ4g1H5dnjkm0kP1Q%22%7D; panoramaId=186743b147fc34dc67608e9d25c2a9fb927a4923a7fba6f459b4fd92c653f595; panoramaIdType=panoDevice; panoramaId_expiry=1707427620274; _au_last_seen_pixels=eyJhcG4iOjE3MDczNDEyMjIsInR0ZCI6MTcwNzM0MTIyMiwicHViIjoxNzA3MzQxMjIyLCJydWIiOjE3MDczNDEyMjIsInRhcGFkIjoxNzA3MzQxMjIyLCJhZHgiOjE3MDczNDEyMjIsImdvbyI6MTcwNzM0MTIyMiwiaW5kZXgiOjE3MDczNDEyMjIsIm9wZW54IjoxNzA3MzQxMjIyLCJhZG8iOjE3MDczNDEyMjIsInNvbiI6MTcwNzMzMzkyNSwicHBudCI6MTcwNzMzMzkyNSwidW5ydWx5IjoxNzA3MzMzOTI1LCJ0YWJvb2xhIjoxNzA3MzMzOTI1LCJhbW8iOjE3MDczMzM5MjUsImltcHIiOjE3MDczMzM5MjUsImJlZXMiOjE3MDczMzM5MjUsInNtYXJ0IjoxNzA3MzMzOTI1LCJjb2xvc3N1cyI6MTcwNzMzMzkyNX0%3D; _lr_retry_request=true; __cf_bm=L2105Wsb17bG1xa7wb5nCiT.HBXRe74VwzNFNVtG2uY-1707344897-1-AXhTDNK8Lb5Ygb5lErhNkDRGbFKBHthAhadPN3dutwHlkf25WLUQGpAuWEkabrFO2vavF5O8S+fj+Kh7KGE57sw=; __gads=ID=1c79d801193f510c:T=1707253418:RT=1707344904:S=ALNI_MboGotIm_m3okPJVwneeHhZs3rxZw; __gpi=UID=00000dbfeebb1c64:T=1707253418:RT=1707344904:S=ALNI_MZfvJj41V8QTa6Ah5qw6kCb94DltQ; __eoi=ID=500f8bc60f5daf55:T=1707253418:RT=1707344904:S=AA-AfjZwb78Cn9F6u4G7wjR0CUQI; cto_bundle=6hqEtV9XU0dJMG4yc01XWmpoNWdaY1k5ZWglMkZXVFM2NDMyNyUyRmFBeFFGREx0U3lhcVQwU3NUVHBjaCUyRkdid2JUSnF1OWtFeXVLZUViUXRQeVdFSkE2U0RXczdiYjhKWk5tOSUyQnNHd2E3NWM0VUdyc3NROEdZZFlwTld1QXhQV08weEVlQ01MTXlIRUZCdU5jVEpzVyUyQlMwNWhvam9lbDh0UCUyQjFkZTNLbDlTTkJYdERhamclM0Q; cto_bidid=eiGOMF9LQVVxMWF4MVlCbEQ0ZlRkWk5KOW01WjYlMkZqYUZlQXFkMkNsSmNDUWxzakpVeGRxNnYlMkZmNE80WXRURUNDYVFRbTVheiUyRkp0WkVTNTBQY2c0Vmt4T2pUQnhlWUU3MGZTdXJ4RlhVVkhQU3FzJTJGT1ZhVDYydmZvWmhTcElxOE9BJTJGck0; FCNEC=%5B%5B%22AKsRol8oEzoyaaETOTm2iCSnf7-J4hVqn5oA20nFoRXMQyzwDgwk8Tm0RappESvFw3dwLTEuvgtGYMhRYQX-4-zL3WMIT0RDUdHjTI3yWnFHIZuaI1XuAL4nhCFQRQs_D-NO9dYiye6Bx5hivMeqPiy3PS02ve4UpQ%3D%3D%22%5D%5D; cf_clearance=sddPrJiPUMO0AUPgRQrv_vIlb_M2Waozs.Gttim7L2Y-1707345102-1-ATyPQkeHvwHipR+ziE0srPWeK2QcnEw68lG+kocf6oD4qeFMZZ/oC2NL+C9etNMaykdeLthtkCljt0usJOtzrpU=; _ga_CNSJ7NJVG1=GS1.1.1707331600.5.1.1707345103.0.0.0; _ga=GA1.2.2108796628.1707249453; _dc_gtm_UA-103774020-1=1; lotame_domain_check=fastpeoplesearch.com; _tfpvi=M2I3ZGMyMzktZWFhZi00NzQxLWJiNzMtYWM1OTFiMjExMzlhIzUw';
+        $cookieHeader = '_uc_referrer=direct; _gid=GA1.2.1640535721.1707249453; ALLOW_COOKIES=true; _lr_env_src_ats=false; gcid_first=293f37f1-09b6-4b71-92d8-16c5de4e8d0d; _cc_id=f058162eff036db6cbf2a359bffe2cf; __qca=P0-230206700-1707253466055; _au_1d=AU1D-0100-001707282800-HGSQRQTF-AH4E; FCCDCF=%5Bnull%2Cnull%2Cnull%2C%5B%22CP5m9AAP5m9AAEsACBENAmEoAP_gAEPgABBYINJD7D7FbSFCwHpzaLsAMAhHRsCAQoQAAASBAmABQAKQIAQCgkAQFASgBAACAAAAICZBIQAECAAACUAAQAAAAAAEAAAAAAAIIAAAgAEAAAAIAAACAAAAEAAIAAAAEAAAmAgAAIIACAAAhAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAQOhQD2F2K2kKFkPCmQWYAQBCijYEAhQAAAAkCBIAAgAUgQAgFIIAgAIFAAAAAAAAAQEgCQAAQABAAAIACgAAAAAAIAAAAAAAQQAAAAAIAAAAAAAAEAAAAAAAQAAAAIAABEhCAAQQAEAAAAAAAQAAAAAAAAAAABAAA%22%2C%222~2072.70.89.93.108.122.149.196.2253.2299.259.2357.311.313.323.2373.338.358.2415.415.449.2506.2526.486.494.495.2568.2571.2575.540.574.2624.609.2677.864.981.1029.1048.1051.1095.1097.1126.1201.1205.1211.1276.1301.1344.1365.1415.1423.1449.1451.1570.1577.1598.1651.1716.1735.1753.1765.1870.1878.1889.1958~dv.%22%2C%2252DE7854-9ED1-4B47-B736-0C795A31F327%22%5D%5D; _au_last_seen_iab_tcf=1707333927777; pbjs_li_nonid_cst=myypLK4sUw%3D%3D; pbjs_li_nonid=%7B%22nonId%22%3A%22CHILhKM5b8BvKJHFOwxDVRQ4g1H5dnjkm0kP1Q%22%7D; panoramaId=186743b147fc34dc67608e9d25c2a9fb927a4923a7fba6f459b4fd92c653f595; panoramaIdType=panoDevice; panoramaId_expiry=1707427620274; _au_last_seen_pixels=eyJhcG4iOjE3MDczNDEyMjIsInR0ZCI6MTcwNzM0MTIyMiwicHViIjoxNzA3MzQxMjIyLCJydWIiOjE3MDczNDEyMjIsInRhcGFkIjoxNzA3MzQxMjIyLCJhZHgiOjE3MDczNDEyMjIsImdvbyI6MTcwNzM0MTIyMiwiaW5kZXgiOjE3MDczNDEyMjIsIm9wZW54IjoxNzA3MzQxMjIyLCJhZG8iOjE3MDczNDEyMjIsInNvbiI6MTcwNzMzMzkyNSwicHBudCI6MTcwNzMzMzkyNSwidW5ydWx5IjoxNzA3MzMzOTI1LCJ0YWJvb2xhIjoxNzA3MzMzOTI1LCJhbW8iOjE3MDczMzM5MjUsImltcHIiOjE3MDczMzM5MjUsImJlZXMiOjE3MDczMzM5MjUsInNtYXJ0IjoxNzA3MzMzOTI1LCJjb2xvc3N1cyI6MTcwNzMzMzkyNX0%3D; __eoi=ID=500f8bc60f5daf55:T=1707253418:RT=1707344904:S=AA-AfjZwb78Cn9F6u4G7wjR0CUQI; cf_clearance=Az71xoSHhtXAv7l8UQqNtSvd9IOMUZxXI0lLxYgUuDo-1707345112-1-ATraZOBzQ8gF9O/IWFfC1mG1Vmarxl/JoEu9yQjU0JDrft6zMWFsB8Hdf0rYweut9W4jMe2pAeIahv7Ygww96eA=; __cf_bm=mrnP5xM.YRmWNGe2dOVVAGHu.luwKWGj8QvxRuQwn5k-1707346858-1-AdeY7ychTvAWYeDA9QGTHS+TtJGNcRw9hvdfl2SOtdrobkdnp9CW8Y1EYunbZQzpvMet12uJlpjXyVN4IuKD+9U=; _ga_CNSJ7NJVG1=GS1.1.1707331600.5.1.1707346862.0.0.0; _ga=GA1.2.2108796628.1707249453; _dc_gtm_UA-103774020-1=1; _lr_retry_request=true; __gads=ID=1c79d801193f510c:T=1707253418:RT=1707346863:S=ALNI_MboGotIm_m3okPJVwneeHhZs3rxZw; __gpi=UID=00000dbfeebb1c64:T=1707253418:RT=1707346863:S=ALNI_MZfvJj41V8QTa6Ah5qw6kCb94DltQ; _tfpvi=ZjU2NDQwMzEtMDY5Ny00ZGQzLTg2ZGUtMThmYTQwNDJjMGQ5Iy0zLTc%3D; cto_bundle=3EVUTV9XU0dJMG4yc01XWmpoNWdaY1k5ZWh6dW5yNjUxS2tqZzZIMzBBb280OG5PZ09Lc28lMkJ0M1NRMnNvMzhtdlZobU5NNllvWWpJWnVxRUR3R05EJTJGclFxUndIWWFtMkg4ZVNkSUFKYlBqVmJ3Q3NxajRWV25zenBLY3pLcVhKOUdEajFTTktkUVJWSkMlMkIzbnR0T0ZISzBrVk55TDV0Q2pVMHB4T2pSVG1OanVXaGslM0Q; cto_bidid=gxKhvV9LQVVxMWF4MVlCbEQ0ZlRkWk5KOW01WjYlMkZqYUZlQXFkMkNsSmNDUWxzakpVeGRxNnYlMkZmNE80WXRURUNDYVFRbTVheiUyRkp0WkVTNTBQY2c0Vmt4T2pUQnhlWUU3MGZTdXJ4RlhVVkhQU3FzODZQRSUyQmxKUVlvbUpCamZCMFVIbFZJ; FCNEC=%5B%5B%22AKsRol-YNStV7IrV9XwqyOoGmb5ihHklLMXsUi9f3--JfFyPEvtsEpj2QKYncEt6jGLXq5vGPRDyW-otzCVvJVyFCTsZ7JP8b-nw1UUdOKm1kDuTR_1XW2qkj5757b5Cqd7kITNuLX-J9P32JZgJE5ZKIOj_IwrQ5A%3D%3D%22%5D%5D';
 
         $cookiesArray = [];
         foreach (explode('; ', $cookieHeader) as $cookie) {
@@ -114,7 +114,7 @@ class ScraperController extends Controller {
             'Accept-Language' => 'en-US,en;q=0.9',
             'Cookie' => $cookieHeader,
             // 'Referer' => 'https://www.fastpeoplesearch.com/',
-            'If-Modified-Since' => 'Wed, 07 Feb 2024 21:40:06 GMT',
+            'If-Modified-Since' => 'Wed, 07 Feb 2024 21:40:35 GMT',
             'Sec-Ch-Ua' => '"Not A(Brand";v="99", "Google Chrome";v="121", "Chromium";v="121"',
             'Sec-Ch-Ua-Mobile' => '?0',
             'Sec-Ch-Ua-Platform' => '"macOS"',
@@ -150,7 +150,7 @@ class ScraperController extends Controller {
         });
 
         // Current Address Section
-        $currentAddress = $crawler->filter('#current-address-section .detail-box-content h3 a')->each(function ($addNode) {
+        $currentAddress = $crawler->filter('#current-addresses-property .detail-box-content h3')->each(function ($addNode) {
             return $addNode->text();
         });
 
@@ -202,7 +202,6 @@ class ScraperController extends Controller {
             return $akaNode;
         });
 
-
         $relativeLinks = $crawler->filter('#relative-links .detail-box-content dl dt a')->each(function ($linkNode) {
             return $linkNode->text();
         });
@@ -211,6 +210,24 @@ class ScraperController extends Controller {
             return $associateNode->text();
         });
 
-        return response()->json($associateLinks);
+        $businesses = $crawler->filter('#business_section .detail-box-content dl dt')->each(function ($businessNode) {
+            return $businessNode->text();
+        });
+
+        $currentEmployment = $crawler->filter('#current_employment_section dl')->each(function ($empNode) {
+            return $empNode->text();
+        });
+
+        $workExp = $crawler->filter('#work_experience_section dl')->each(function ($workNode) {
+            return $workNode->text();
+        });
+
+
+        $education = $crawler->filter('#education_section dl')->each(function ($eduNode) {
+            return $eduNode->text();
+        });
+
+
+        return response()->json($education);
     }
 }
