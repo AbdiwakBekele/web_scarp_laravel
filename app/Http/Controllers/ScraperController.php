@@ -222,11 +222,9 @@ class ScraperController extends Controller {
             return $workNode->text();
         });
 
-
         $education = $crawler->filter('#education_section dl')->each(function ($eduNode) {
             return $eduNode->text();
         });
-
 
         $report = $crawler->filter('#background_report_section')->each(function ($reportNode) {
             return $reportNode->text();
