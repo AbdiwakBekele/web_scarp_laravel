@@ -228,6 +228,10 @@ class ScraperController extends Controller {
         });
 
 
-        return response()->json($education);
+        $report = $crawler->filter('#background_report_section')->each(function ($reportNode) {
+            return $reportNode->text();
+        });
+
+        return response()->json($report);
     }
 }
