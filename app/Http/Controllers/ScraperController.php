@@ -98,7 +98,7 @@ class ScraperController extends Controller {
     public function testScrap() {
 
         $url = 'https://www.fastpeoplesearch.com/daniel-eyob_id_G-3956879193660365613';
-        $cookieHeader = '_uc_referrer=direct; _gid=GA1.2.1640535721.1707249453; ALLOW_COOKIES=true; _lr_env_src_ats=false; gcid_first=293f37f1-09b6-4b71-92d8-16c5de4e8d0d; _cc_id=f058162eff036db6cbf2a359bffe2cf; __qca=P0-230206700-1707253466055; _au_1d=AU1D-0100-001707282800-HGSQRQTF-AH4E; FCCDCF=%5Bnull%2Cnull%2Cnull%2C%5B%22CP5m9AAP5m9AAEsACBENAmEoAP_gAEPgABBYINJD7D7FbSFCwHpzaLsAMAhHRsCAQoQAAASBAmABQAKQIAQCgkAQFASgBAACAAAAICZBIQAECAAACUAAQAAAAAAEAAAAAAAIIAAAgAEAAAAIAAACAAAAEAAIAAAAEAAAmAgAAIIACAAAhAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAQOhQD2F2K2kKFkPCmQWYAQBCijYEAhQAAAAkCBIAAgAUgQAgFIIAgAIFAAAAAAAAAQEgCQAAQABAAAIACgAAAAAAIAAAAAAAQQAAAAAIAAAAAAAAEAAAAAAAQAAAAIAABEhCAAQQAEAAAAAAAQAAAAAAAAAAABAAA%22%2C%222~2072.70.89.93.108.122.149.196.2253.2299.259.2357.311.313.323.2373.338.358.2415.415.449.2506.2526.486.494.495.2568.2571.2575.540.574.2624.609.2677.864.981.1029.1048.1051.1095.1097.1126.1201.1205.1211.1276.1301.1344.1365.1415.1423.1449.1451.1570.1577.1598.1651.1716.1735.1753.1765.1870.1878.1889.1958~dv.%22%2C%2252DE7854-9ED1-4B47-B736-0C795A31F327%22%5D%5D; _au_last_seen_iab_tcf=1707333927777; pbjs_li_nonid_cst=myypLK4sUw%3D%3D; pbjs_li_nonid=%7B%22nonId%22%3A%22CHILhKM5b8BvKJHFOwxDVRQ4g1H5dnjkm0kP1Q%22%7D; panoramaId=186743b147fc34dc67608e9d25c2a9fb927a4923a7fba6f459b4fd92c653f595; panoramaIdType=panoDevice; panoramaId_expiry=1707427620274; _au_last_seen_pixels=eyJhcG4iOjE3MDczNDEyMjIsInR0ZCI6MTcwNzM0MTIyMiwicHViIjoxNzA3MzQxMjIyLCJydWIiOjE3MDczNDEyMjIsInRhcGFkIjoxNzA3MzQxMjIyLCJhZHgiOjE3MDczNDEyMjIsImdvbyI6MTcwNzM0MTIyMiwiaW5kZXgiOjE3MDczNDEyMjIsIm9wZW54IjoxNzA3MzQxMjIyLCJhZG8iOjE3MDczNDEyMjIsInNvbiI6MTcwNzMzMzkyNSwicHBudCI6MTcwNzMzMzkyNSwidW5ydWx5IjoxNzA3MzMzOTI1LCJ0YWJvb2xhIjoxNzA3MzMzOTI1LCJhbW8iOjE3MDczMzM5MjUsImltcHIiOjE3MDczMzM5MjUsImJlZXMiOjE3MDczMzM5MjUsInNtYXJ0IjoxNzA3MzMzOTI1LCJjb2xvc3N1cyI6MTcwNzMzMzkyNX0%3D; __eoi=ID=500f8bc60f5daf55:T=1707253418:RT=1707344904:S=AA-AfjZwb78Cn9F6u4G7wjR0CUQI; cf_clearance=Az71xoSHhtXAv7l8UQqNtSvd9IOMUZxXI0lLxYgUuDo-1707345112-1-ATraZOBzQ8gF9O/IWFfC1mG1Vmarxl/JoEu9yQjU0JDrft6zMWFsB8Hdf0rYweut9W4jMe2pAeIahv7Ygww96eA=; __cf_bm=mrnP5xM.YRmWNGe2dOVVAGHu.luwKWGj8QvxRuQwn5k-1707346858-1-AdeY7ychTvAWYeDA9QGTHS+TtJGNcRw9hvdfl2SOtdrobkdnp9CW8Y1EYunbZQzpvMet12uJlpjXyVN4IuKD+9U=; _ga_CNSJ7NJVG1=GS1.1.1707331600.5.1.1707346862.0.0.0; _ga=GA1.2.2108796628.1707249453; _dc_gtm_UA-103774020-1=1; _lr_retry_request=true; __gads=ID=1c79d801193f510c:T=1707253418:RT=1707346863:S=ALNI_MboGotIm_m3okPJVwneeHhZs3rxZw; __gpi=UID=00000dbfeebb1c64:T=1707253418:RT=1707346863:S=ALNI_MZfvJj41V8QTa6Ah5qw6kCb94DltQ; _tfpvi=ZjU2NDQwMzEtMDY5Ny00ZGQzLTg2ZGUtMThmYTQwNDJjMGQ5Iy0zLTc%3D; cto_bundle=3EVUTV9XU0dJMG4yc01XWmpoNWdaY1k5ZWh6dW5yNjUxS2tqZzZIMzBBb280OG5PZ09Lc28lMkJ0M1NRMnNvMzhtdlZobU5NNllvWWpJWnVxRUR3R05EJTJGclFxUndIWWFtMkg4ZVNkSUFKYlBqVmJ3Q3NxajRWV25zenBLY3pLcVhKOUdEajFTTktkUVJWSkMlMkIzbnR0T0ZISzBrVk55TDV0Q2pVMHB4T2pSVG1OanVXaGslM0Q; cto_bidid=gxKhvV9LQVVxMWF4MVlCbEQ0ZlRkWk5KOW01WjYlMkZqYUZlQXFkMkNsSmNDUWxzakpVeGRxNnYlMkZmNE80WXRURUNDYVFRbTVheiUyRkp0WkVTNTBQY2c0Vmt4T2pUQnhlWUU3MGZTdXJ4RlhVVkhQU3FzODZQRSUyQmxKUVlvbUpCamZCMFVIbFZJ; FCNEC=%5B%5B%22AKsRol-YNStV7IrV9XwqyOoGmb5ihHklLMXsUi9f3--JfFyPEvtsEpj2QKYncEt6jGLXq5vGPRDyW-otzCVvJVyFCTsZ7JP8b-nw1UUdOKm1kDuTR_1XW2qkj5757b5Cqd7kITNuLX-J9P32JZgJE5ZKIOj_IwrQ5A%3D%3D%22%5D%5D';
+        $cookieHeader = '__cf_bm=lVKJtF.hSXFz3ZqsjucmGjUZyFTxQGVTgskYsnBN50c-1707351970-1-AT2fLMO0f7LgV6OJ2SUgI+jK66EQ1k57/nzyc5/rAlimcNPtAIlt1+rNUIZ0lYMjpPWjZe2jyrH8VSf4633XpC8=; _gid=GA1.2.1521156501.1707351980; _uc_referrer=direct; __gads=ID=fcffad9f5ab4be35:T=1707351980:RT=1707351980:S=ALNI_Ma3rsJDG8zixhoXfoGYeDC8GJ8Q-g; __gpi=UID=00000a0bfd3fd95e:T=1707351980:RT=1707351980:S=ALNI_MZQJx6bn9BwMIsjKgRPEcmKRwhrrQ; __eoi=ID=cfe37f155e62e1b6:T=1707351980:RT=1707351980:S=AA-Afjb6LyczQSirzcwy8J_QV55X; _lr_retry_request=true; _lr_env_src_ats=false; _cc_id=fa4141bbef3c4fb4efc6d5b97362a04c; panoramaId_expiry=1707438399274; panoramaId=933eec5cb464e390a27c46c057dda9fb927a416a25d4b683cc56e80ecefbbbf3; pbjs_li_nonid=%7B%22nonId%22%3A%22NNV6kDzY5YXpgYeqKC0ObnLacrwQWXjhGl2Zpg%22%7D; gcid_first=ef0e24b0-f15a-43a8-a549-ba3163023d48; _au_1d=AU1D-0100-001707352003-I9V0IAUK-H82W; __qca=P0-761721909-1707352002862; cf_clearance=gqID9Aq01NGXnl8QCySw1ZNZQPj4FKGkymLthIfe_rs-1707352069-1-AVRXyW61vU0lZPo16jHY991vH9o0kkyDHrvvglJwioy64eogDuTtVPZ093AOomo0iwfdu1tSrRH01TR2a08byiM=; ALLOW_COOKIES=true; pbjs_li_nonid_cst=zix7LPQsHA%3D%3D; _tfpvi=MjA4M2YzNzItM2U3Mi00YjVjLThhMmUtOWQ5NTM1YTJmNWEyIzgtNA%3D%3D; _au_last_seen_pixels=eyJhcG4iOjE3MDczNTIwMDMsInR0ZCI6MTcwNzM1MjAwMywicHViIjoxNzA3MzUyMDAzLCJydWIiOjE3MDczNTIwMDMsInRhcGFkIjoxNzA3MzUyMDAzLCJhZHgiOjE3MDczNTIwMDMsImdvbyI6MTcwNzM1MjAwMywiaW5kZXgiOjE3MDczNTIwMDMsInNvbiI6MTcwNzM1MjAwMywiYmVlcyI6MTcwNzM1MjAwMywiYWRvIjoxNzA3MzUyMDc1LCJ1bnJ1bHkiOjE3MDczNTIwNzUsIm9wZW54IjoxNzA3MzUyMDc1LCJ0YWJvb2xhIjoxNzA3MzUyMDc1LCJwcG50IjoxNzA3MzUyMDc1LCJjb2xvc3N1cyI6MTcwNzM1MjA3NSwiaW1wciI6MTcwNzM1MjA3NSwiYW1vIjoxNzA3MzUyMDc1LCJzbWFydCI6MTcwNzM1MjA3NX0%3D; cto_bundle=hbspOF9nc2dCJTJCQW80OWJVdDAzbTY5RSUyQlR6WWhoVFM4SWFuOXUzZE1KSFlERkx6RUElMkJ5WlUyM2xDS2NVTE1zSFBzbEIyRlZkOVA4d0owQnNWbiUyRjFBUGZhUFN0NE80ZkJBdTElMkZ2dWxYOENWWkJQVUlUUjRjQzRnMFpZd2FoOFZ1Q21Hak1rd1hoOWxYaUx2VUFHbEpFUVlLRDBldjRBbW1vVmp4TG5STDZhMDhLVm9NJTNE; cto_bidid=mmqYPF9rdEU2VzZKZXlwYmZhQm9NJTJCWlJNVSUyRkl4d3JKNjAxelhnV1Z1Mmk1R09Ic08xZXUxR1FRem5FcW9wZEN5V3RQMTZ4THUlMkZ6elFsRllZV0M4clBCVElMWTJ0ciUyQjdZb1oyQ3oyb0YlMkZKWGpiN2ZSZzJobHp6ZXBvYnRoRUJiJTJCNzVFaw; FCNEC=%5B%5B%22AKsRol8r0Hswa67BffEIpdiNLgrLkmdeb9MhwXZKh_IBIxhRmpPGoAZ0KRZFcAxpo4ilQmfjJ4AriEgWK5hJbrIFHh1Poa2rqId2kAMqJE0k6t0nZwp9lDksMFPEPwrMw-UjSoVNcz2CnSmRKP_49rJKIjPqSA8jeQ%3D%3D%22%5D%5D; _ga_CNSJ7NJVG1=GS1.1.1707350798.7.1.1707352109.0.0.0; _ga=GA1.1.1465846399.1707351980; _gat_auPassiveTagger=1';
 
         $cookiesArray = [];
         foreach (explode('; ', $cookieHeader) as $cookie) {
@@ -114,13 +114,13 @@ class ScraperController extends Controller {
             'Accept-Language' => 'en-US,en;q=0.9',
             'Cookie' => $cookieHeader,
             // 'Referer' => 'https://www.fastpeoplesearch.com/',
-            'If-Modified-Since' => 'Wed, 07 Feb 2024 21:40:35 GMT',
+            'If-Modified-Since' => 'Wed, 07 Feb 2024 21:37:17 GMT',
             'Sec-Ch-Ua' => '"Not A(Brand";v="99", "Google Chrome";v="121", "Chromium";v="121"',
             'Sec-Ch-Ua-Mobile' => '?0',
             'Sec-Ch-Ua-Platform' => '"macOS"',
             'Sec-Fetch-Dest' => 'document',
             'Sec-Fetch-Mode' => 'navigate',
-            'Sec-Fetch-Site' => 'none',
+            'Sec-Fetch-Site' => 'same-origin',
             'Sec-Fetch-User' => '?1',
             'Upgrade-Insecure-Requests' => '1',
             'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
@@ -158,7 +158,6 @@ class ScraperController extends Controller {
         $preAddresses = $crawler->filter('.address-link a')->each(function ($addressNode) {
             return $addressNode->text();
         });
-
 
         // Extracting Phone Number
         $phoneDetails = $crawler->filter('.detail-box-phone dl')->each(function ($dlNode) {
@@ -198,16 +197,62 @@ class ScraperController extends Controller {
         $emailAddresses = array_merge(...$emailDetails);
 
         // Extracting AKA
-        $akaLinks = $crawler->filter('h3')->each(function ($akaNode) {
-            return $akaNode;
+        $akaLinks = $crawler->filter('#aka-links h3')->each(function ($akaNode) {
+            return $akaNode->text();
         });
 
-        $relativeLinks = $crawler->filter('#relative-links .detail-box-content dl dt a')->each(function ($linkNode) {
-            return $linkNode->text();
+        $relativeLinks = $crawler->filter('#relative-links .detail-box-content dl')->each(function ($dlNode) {
+            // Initialize an empty array to store merged data
+            $mergedData = [];
+
+            // Find all dt and dd pairs within this dl tag
+            $dtNodes = $dlNode->filter('dt');
+            $ddNodes = $dlNode->filter('dd');
+
+            // Iterate over dt nodes (relative names) and dd nodes (ages)
+            $dtNodes->each(function ($dtNode, $i) use ($ddNodes, &$mergedData) {
+                // Get the text content of the dt node (relative name)
+                $relativeName = $dtNode->text();
+
+                // Get the text content of the corresponding dd node (age)
+                $age = $ddNodes->eq($i)->text();
+
+                // Merge relative name and age together and add to the merged data array
+                $mergedData[] = [
+                    'name' => $relativeName,
+                    'age' => $age,
+                ];
+            });
+
+            return $mergedData;
         });
 
-        $associateLinks = $crawler->filter('#associate-links .detail-box-content dl dt a')->each(function ($associateNode) {
-            return $associateNode->text();
+        $associates = $crawler->filter('#associate-links .detail-box-content dl')->each(function ($dlNode) {
+            // Initialize an empty array to store merged data
+            $mergedData = [];
+
+            // Find all dt and dd pairs within this dl tag
+            $dtNodes = $dlNode->filter('dt');
+            $ddNodes = $dlNode->filter('dd');
+
+            // Iterate over dt nodes (relative names) and dd nodes (ages)
+            $dtNodes->each(function ($dtNode, $i) use ($ddNodes, &$mergedData) {
+                // Get the text content of the dt node (relative name)
+                $relativeName = $dtNode->text();
+
+                // Get the text content of the corresponding dd node (age)
+                $ageString = $ddNodes->eq($i)->text();
+                preg_match('/Age (\d+)/', $ageString, $matches);
+                $age = $matches[1];
+
+                // Merge relative name and age together and add to the merged data array
+                $mergedData[] = [
+                    'name' => $relativeName,
+                    'age' => $age,
+                ];
+            });
+
+            return $mergedData;
         });
 
         $businesses = $crawler->filter('#business_section .detail-box-content dl dt')->each(function ($businessNode) {
@@ -230,6 +275,6 @@ class ScraperController extends Controller {
             return $reportNode->text();
         });
 
-        return response()->json($report);
+        return response()->json($phoneNumbers);
     }
 }

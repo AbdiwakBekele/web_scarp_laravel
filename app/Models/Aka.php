@@ -9,10 +9,7 @@ class Aka extends Model {
     use HasFactory;
 
     protected $fillable = [
-        'fullname',
-        'age',
-        'current_address',
-        'current_employment',
-        'report'
+        'person_id',
+        'name'
     ];
 }

@@ -9,10 +9,15 @@ return new class extends Migration {
      * Run the migrations.
      */
     public function up(): void {
-        Schema::create('education', function (Blueprint $table) {
+        Schema::create('person', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('person_id');
-            $table->string('data');
+            $table->string('fullname');
+            $table->string('age');
+            $table->string('current_address');
+            $table->string('current_employment');
+            $table->string('position');
+            $table->string('started_date');
+            $table->text('report');
             $table->timestamps();
         });
     }
@@ -21,6 +26,6 @@ return new class extends Migration {
      * Reverse the migrations.
      */
     public function down(): void {
-        Schema::dropIfExists('education');
+        Schema::dropIfExists('people');
     }
 };
