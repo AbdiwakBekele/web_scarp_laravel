@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Associate extends Model {
     use HasFactory;
     protected $fillable = [
-        'person_id',
+        'people_id',
         'name',
         'age'
     ];

@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('associates', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('person_id');
+            $table->unsignedBigInteger('people_id');
             $table->string('name');
             $table->string('age');
             $table->timestamps();

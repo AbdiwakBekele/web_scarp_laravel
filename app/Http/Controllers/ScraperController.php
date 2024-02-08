@@ -3,6 +3,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aka;
+use App\Models\Associate;
+use App\Models\Business;
+use App\Models\Education;
+use App\Models\Person;
+use App\Models\Phone;
+use App\Models\PreviousAddress;
+use App\Models\Relative;
+use App\Models\Work;
 use Illuminate\Http\Request;
 use Symfony\Component\DomCrawler\Crawler;
 use GuzzleHttp\Client;
@@ -98,7 +107,7 @@ class ScraperController extends Controller {
     public function testScrap() {
 
         $url = 'https://www.fastpeoplesearch.com/daniel-eyob_id_G-3956879193660365613';
-        $cookieHeader = '__cf_bm=lVKJtF.hSXFz3ZqsjucmGjUZyFTxQGVTgskYsnBN50c-1707351970-1-AT2fLMO0f7LgV6OJ2SUgI+jK66EQ1k57/nzyc5/rAlimcNPtAIlt1+rNUIZ0lYMjpPWjZe2jyrH8VSf4633XpC8=; _gid=GA1.2.1521156501.1707351980; _uc_referrer=direct; __gads=ID=fcffad9f5ab4be35:T=1707351980:RT=1707351980:S=ALNI_Ma3rsJDG8zixhoXfoGYeDC8GJ8Q-g; __gpi=UID=00000a0bfd3fd95e:T=1707351980:RT=1707351980:S=ALNI_MZQJx6bn9BwMIsjKgRPEcmKRwhrrQ; __eoi=ID=cfe37f155e62e1b6:T=1707351980:RT=1707351980:S=AA-Afjb6LyczQSirzcwy8J_QV55X; _lr_retry_request=true; _lr_env_src_ats=false; _cc_id=fa4141bbef3c4fb4efc6d5b97362a04c; panoramaId_expiry=1707438399274; panoramaId=933eec5cb464e390a27c46c057dda9fb927a416a25d4b683cc56e80ecefbbbf3; pbjs_li_nonid=%7B%22nonId%22%3A%22NNV6kDzY5YXpgYeqKC0ObnLacrwQWXjhGl2Zpg%22%7D; gcid_first=ef0e24b0-f15a-43a8-a549-ba3163023d48; _au_1d=AU1D-0100-001707352003-I9V0IAUK-H82W; __qca=P0-761721909-1707352002862; cf_clearance=gqID9Aq01NGXnl8QCySw1ZNZQPj4FKGkymLthIfe_rs-1707352069-1-AVRXyW61vU0lZPo16jHY991vH9o0kkyDHrvvglJwioy64eogDuTtVPZ093AOomo0iwfdu1tSrRH01TR2a08byiM=; ALLOW_COOKIES=true; pbjs_li_nonid_cst=zix7LPQsHA%3D%3D; _tfpvi=MjA4M2YzNzItM2U3Mi00YjVjLThhMmUtOWQ5NTM1YTJmNWEyIzgtNA%3D%3D; _au_last_seen_pixels=eyJhcG4iOjE3MDczNTIwMDMsInR0ZCI6MTcwNzM1MjAwMywicHViIjoxNzA3MzUyMDAzLCJydWIiOjE3MDczNTIwMDMsInRhcGFkIjoxNzA3MzUyMDAzLCJhZHgiOjE3MDczNTIwMDMsImdvbyI6MTcwNzM1MjAwMywiaW5kZXgiOjE3MDczNTIwMDMsInNvbiI6MTcwNzM1MjAwMywiYmVlcyI6MTcwNzM1MjAwMywiYWRvIjoxNzA3MzUyMDc1LCJ1bnJ1bHkiOjE3MDczNTIwNzUsIm9wZW54IjoxNzA3MzUyMDc1LCJ0YWJvb2xhIjoxNzA3MzUyMDc1LCJwcG50IjoxNzA3MzUyMDc1LCJjb2xvc3N1cyI6MTcwNzM1MjA3NSwiaW1wciI6MTcwNzM1MjA3NSwiYW1vIjoxNzA3MzUyMDc1LCJzbWFydCI6MTcwNzM1MjA3NX0%3D; cto_bundle=hbspOF9nc2dCJTJCQW80OWJVdDAzbTY5RSUyQlR6WWhoVFM4SWFuOXUzZE1KSFlERkx6RUElMkJ5WlUyM2xDS2NVTE1zSFBzbEIyRlZkOVA4d0owQnNWbiUyRjFBUGZhUFN0NE80ZkJBdTElMkZ2dWxYOENWWkJQVUlUUjRjQzRnMFpZd2FoOFZ1Q21Hak1rd1hoOWxYaUx2VUFHbEpFUVlLRDBldjRBbW1vVmp4TG5STDZhMDhLVm9NJTNE; cto_bidid=mmqYPF9rdEU2VzZKZXlwYmZhQm9NJTJCWlJNVSUyRkl4d3JKNjAxelhnV1Z1Mmk1R09Ic08xZXUxR1FRem5FcW9wZEN5V3RQMTZ4THUlMkZ6elFsRllZV0M4clBCVElMWTJ0ciUyQjdZb1oyQ3oyb0YlMkZKWGpiN2ZSZzJobHp6ZXBvYnRoRUJiJTJCNzVFaw; FCNEC=%5B%5B%22AKsRol8r0Hswa67BffEIpdiNLgrLkmdeb9MhwXZKh_IBIxhRmpPGoAZ0KRZFcAxpo4ilQmfjJ4AriEgWK5hJbrIFHh1Poa2rqId2kAMqJE0k6t0nZwp9lDksMFPEPwrMw-UjSoVNcz2CnSmRKP_49rJKIjPqSA8jeQ%3D%3D%22%5D%5D; _ga_CNSJ7NJVG1=GS1.1.1707350798.7.1.1707352109.0.0.0; _ga=GA1.1.1465846399.1707351980; _gat_auPassiveTagger=1';
+        $cookieHeader = '_gid=GA1.2.1521156501.1707351980; _uc_referrer=direct; _lr_retry_request=true; _lr_env_src_ats=false; _cc_id=fa4141bbef3c4fb4efc6d5b97362a04c; panoramaId_expiry=1707438399274; panoramaId=933eec5cb464e390a27c46c057dda9fb927a416a25d4b683cc56e80ecefbbbf3; pbjs_li_nonid=%7B%22nonId%22%3A%22NNV6kDzY5YXpgYeqKC0ObnLacrwQWXjhGl2Zpg%22%7D; gcid_first=ef0e24b0-f15a-43a8-a549-ba3163023d48; _au_1d=AU1D-0100-001707352003-I9V0IAUK-H82W; __qca=P0-761721909-1707352002862; cf_clearance=gqID9Aq01NGXnl8QCySw1ZNZQPj4FKGkymLthIfe_rs-1707352069-1-AVRXyW61vU0lZPo16jHY991vH9o0kkyDHrvvglJwioy64eogDuTtVPZ093AOomo0iwfdu1tSrRH01TR2a08byiM=; ALLOW_COOKIES=true; pbjs_li_nonid_cst=zix7LPQsHA%3D%3D; _au_last_seen_pixels=eyJhcG4iOjE3MDczNTIwMDMsInR0ZCI6MTcwNzM1MjAwMywicHViIjoxNzA3MzUyMDAzLCJydWIiOjE3MDczNTIwMDMsInRhcGFkIjoxNzA3MzUyMDAzLCJhZHgiOjE3MDczNTIwMDMsImdvbyI6MTcwNzM1MjAwMywiaW5kZXgiOjE3MDczNTIwMDMsInNvbiI6MTcwNzM1MjAwMywiYmVlcyI6MTcwNzM1MjAwMywiYWRvIjoxNzA3MzUyMDc1LCJ1bnJ1bHkiOjE3MDczNTIwNzUsIm9wZW54IjoxNzA3MzUyMDc1LCJ0YWJvb2xhIjoxNzA3MzUyMDc1LCJwcG50IjoxNzA3MzUyMDc1LCJjb2xvc3N1cyI6MTcwNzM1MjA3NSwiaW1wciI6MTcwNzM1MjA3NSwiYW1vIjoxNzA3MzUyMDc1LCJzbWFydCI6MTcwNzM1MjA3NX0%3D; __cf_bm=Tn_2sRa8itn8HhDOYdxucV3KvZ97hJ1WeF6up0MKSEA-1707353976-1-AQ50DQUiF1172tuDEUFKF9PyhI4U4e7u1pTOhZN42Bh9xIyJa7sd4lAA6bLexxpOU1bGjwhaFaHKYaqYO2U5vdA=; __gads=ID=fcffad9f5ab4be35:T=1707351980:RT=1707354125:S=ALNI_Ma3rsJDG8zixhoXfoGYeDC8GJ8Q-g; __gpi=UID=00000a0bfd3fd95e:T=1707351980:RT=1707354125:S=ALNI_MZQJx6bn9BwMIsjKgRPEcmKRwhrrQ; __eoi=ID=cfe37f155e62e1b6:T=1707351980:RT=1707354125:S=AA-Afjb6LyczQSirzcwy8J_QV55X; _dc_gtm_UA-103774020-1=1; _ga_CNSJ7NJVG1=GS1.1.1707350798.7.1.1707354289.0.0.0; _tfpvi=N2JkMzcxYTAtZTJiMy00ZjI1LWFlNjYtZDNlZjdkMjA5ZjE0IzMtNA%3D%3D; cto_bundle=BtUSjV9nc2dCJTJCQW80OWJVdDAzbTY5RSUyQlR6VldSUyUyRnVMSm1NWmVRTllDOE9Rd3Y3JTJGVW4zTnhnN3hvOFJ5M09hT2lwJTJGVW9RcTNIbkZTM3RKZDEzS0NtdkJNdVBTMklNSXhEV3FYN3UyTFBqUHBnMmVTdDIzS29wODhJWmVXVFZwR0M3NzMxeFlFZTJZc2tWQkxOOWNDSG1MOW02dWpYTjliM3AxQ0FZT2xvJTJCU1M5cUElM0Q; cto_bidid=G9g8uF9rdEU2VzZKZXlwYmZhQm9NJTJCWlJNVSUyRkl4d3JKNjAxelhnV1Z1Mmk1R09Ic08xZXUxR1FRem5FcW9wZEN5V3RQMTZ4THUlMkZ6elFsRllZV0M4clBCVElMWTJ0ciUyQjdZb1oyQ3oyb0YlMkZKWGpiN2VORlF4ViUyQk83TnhKWERNYVltN1YlMkZr; _ga=GA1.2.1465846399.1707351980; FCNEC=%5B%5B%22AKsRol-piB5PXTL7cHjaGkQdDbXkcZo4a-do3nYH0EhMw2q9Z25vf9pGMAJ3mA1z0pLwG3uIBy5oV7xmaaWkH8BwayS0TrNXskhl1cJ4FiYdBZNzT5aTFQ7_m2oI8hOyryI7V5VE2xyd8S2-XCvD7wj87uPzDcSdKA%3D%3D%22%5D%5D';
 
         $cookiesArray = [];
         foreach (explode('; ', $cookieHeader) as $cookie) {
@@ -114,13 +123,13 @@ class ScraperController extends Controller {
             'Accept-Language' => 'en-US,en;q=0.9',
             'Cookie' => $cookieHeader,
             // 'Referer' => 'https://www.fastpeoplesearch.com/',
-            'If-Modified-Since' => 'Wed, 07 Feb 2024 21:37:17 GMT',
+            'If-Modified-Since' => 'Wed, 07 Feb 2024 21:40:49 GMT',
             'Sec-Ch-Ua' => '"Not A(Brand";v="99", "Google Chrome";v="121", "Chromium";v="121"',
             'Sec-Ch-Ua-Mobile' => '?0',
             'Sec-Ch-Ua-Platform' => '"macOS"',
             'Sec-Fetch-Dest' => 'document',
             'Sec-Fetch-Mode' => 'navigate',
-            'Sec-Fetch-Site' => 'same-origin',
+            'Sec-Fetch-Site' => 'none',
             'Sec-Fetch-User' => '?1',
             'Upgrade-Insecure-Requests' => '1',
             'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
@@ -134,147 +143,241 @@ class ScraperController extends Controller {
         ]);
 
         $html = $response->getBody()->getContents();
-        // return $html;
 
-        $crawler = new Crawler($html);
+        if (!empty($html)) {
 
-        // Extracting Fullname
-        $fullname = $crawler->filter('.fullname')->each(function ($node) {
-            return $node->text();
-        });
+            $crawler = new Crawler($html);
 
-        // Age Extract
-        $age = $crawler->filter('#age-header')->each(function ($node) {
-            $ageString = $node->text();
-            return str_replace("Age ", "", $ageString);
-        });
+            // Extracting Fullname
+            $fullname = $crawler->filter('.fullname')->each(function ($node) {
+                return $node->text();
+            });
 
-        // Current Address Section
-        $currentAddress = $crawler->filter('#current-addresses-property .detail-box-content h3')->each(function ($addNode) {
-            return $addNode->text();
-        });
+            // Age Extract
+            $age = $crawler->filter('#age-header')->each(function ($node) {
+                $ageString = $node->text();
+                return str_replace("Age ", "", $ageString);
+            });
 
-        // Previous Address
-        $preAddresses = $crawler->filter('.address-link a')->each(function ($addressNode) {
-            return $addressNode->text();
-        });
+            // Current Address Section
+            $currentAddress = $crawler->filter('#current-addresses-property .detail-box-content h3')->each(function ($addNode) {
+                return $addNode->text();
+            });
 
-        // Extracting Phone Number
-        $phoneDetails = $crawler->filter('.detail-box-phone dl')->each(function ($dlNode) {
-            // Initialize an array to store details for this dl tag
-            $details = [];
+            // Previous Address
+            $preAddresses = $crawler->filter('.address-link a')->each(function ($addressNode) {
+                return $addressNode->text();
+            });
 
-            // Find dt tags within this dl tag
-            $dtNodes = $dlNode->filter('dt');
+            // Extracting Phone Number
+            $phoneDetails = $crawler->filter('.detail-box-phone dl')->each(function ($dlNode) {
+                // Initialize an array to store details for this dl tag
+                $details = [];
 
-            // Iterate over dt tags
-            $dtNodes->each(function ($dtNode) use (&$details) {
-                // Find the a tag within the dt tag, if it exists
-                $aNode = $dtNode->filter('a');
+                // Find dt tags within this dl tag
+                $dtNodes = $dlNode->filter('dt');
 
-                // If a tag exists within dt tag, retrieve its text content and add to details array
-                if ($aNode->count() > 0) {
-                    $details[] = $aNode->text();
+                // Iterate over dt tags
+                $dtNodes->each(function ($dtNode) use (&$details) {
+                    // Find the a tag within the dt tag, if it exists
+                    $aNode = $dtNode->filter('a');
+
+                    // If a tag exists within dt tag, retrieve its text content and add to details array
+                    if ($aNode->count() > 0) {
+                        $details[] = $aNode->text();
+                    }
+                });
+
+                return $details;
+            });
+            // Flatten the array of arrays into a single array
+            $phoneNumbers = array_merge(...$phoneDetails);
+
+            // Extracting Email
+            $emailDetails = $crawler->filter('#email_section .detail-box-email h3')->each(function ($emailNode) {
+                // Initialize an array to store details for this dl tag
+                $emails = [];
+
+                if ($emailNode->count() > 0) {
+                    $emails[] = $emailNode->text();
                 }
+
+                return $emails;
+            });
+            $emailAddresses = array_merge(...$emailDetails);
+
+            // Extracting AKA
+            $akaLinks = $crawler->filter('#aka-links h3')->each(function ($akaNode) {
+                return $akaNode->text();
             });
 
-            return $details;
-        });
-        // Flatten the array of arrays into a single array
-        $phoneNumbers = array_merge(...$phoneDetails);
+            $relativeLinks = $crawler->filter('#relative-links .detail-box-content dl')->each(function ($dlNode) {
+                // Initialize an empty array to store merged data
+                $mergedData = [];
 
-        // Extracting Email
-        $emailDetails = $crawler->filter('#email_section .detail-box-email h3')->each(function ($emailNode) {
-            // Initialize an array to store details for this dl tag
-            $emails = [];
+                // Find all dt and dd pairs within this dl tag
+                $dtNodes = $dlNode->filter('dt');
+                $ddNodes = $dlNode->filter('dd');
 
-            if ($emailNode->count() > 0) {
-                $emails[] = $emailNode->text();
+                // Iterate over dt nodes (relative names) and dd nodes (ages)
+                $dtNodes->each(function ($dtNode, $i) use ($ddNodes, &$mergedData) {
+                    // Get the text content of the dt node (relative name)
+                    $relativeName = $dtNode->text();
+
+                    // Get the text content of the corresponding dd node (age)
+                    $age = $ddNodes->eq($i)->text();
+
+                    // Merge relative name and age together and add to the merged data array
+                    $mergedData[] = [
+                        'name' => $relativeName,
+                        'age' => $age,
+                    ];
+                });
+
+                return $mergedData;
+            });
+
+            $associates = $crawler->filter('#associate-links .detail-box-content dl')->each(function ($dlNode) {
+                // Initialize an empty array to store merged data
+                $mergedData = [];
+
+                // Find all dt and dd pairs within this dl tag
+                $dtNodes = $dlNode->filter('dt');
+                $ddNodes = $dlNode->filter('dd');
+
+                // Iterate over dt nodes (relative names) and dd nodes (ages)
+                $dtNodes->each(function ($dtNode, $i) use ($ddNodes, &$mergedData) {
+                    // Get the text content of the dt node (relative name)
+                    $relativeName = $dtNode->text();
+
+                    // Get the text content of the corresponding dd node (age)
+                    $ageString = $ddNodes->eq($i)->text();
+                    preg_match('/Age (\d+)/', $ageString, $matches);
+                    $age = $matches[1];
+
+                    // Merge relative name and age together and add to the merged data array
+                    $mergedData[] = [
+                        'name' => $relativeName,
+                        'age' => $age,
+                    ];
+                });
+
+                return $mergedData;
+            });
+
+            $businesses = $crawler->filter('#business_section .detail-box-content dl dt')->each(function ($businessNode) {
+                return $businessNode->text();
+            });
+
+            $currentEmployment = $crawler->filter('#current_employment_section dl')->each(function ($empNode) {
+                return $empNode->text();
+            });
+
+            $workExp = $crawler->filter('#work_experience_section dl')->each(function ($workNode) {
+                return $workNode->text();
+            });
+
+            $education = $crawler->filter('#education_section dl')->each(function ($eduNode) {
+                return $eduNode->text();
+            });
+
+            $report = $crawler->filter('#background_report_section')->each(function ($reportNode) {
+                return $reportNode->text();
+            });
+
+            // return response()->json($phoneNumbers);
+
+
+            // Store person data
+            $person = Person::create([
+                'fullname' => $fullname[0],
+                'age' => $age[0],
+                'current_address' => $currentAddress[0],
+                'current_employment' => $currentEmployment[0],
+                'report' => $report[0]
+            ]);
+
+            if ($person) {
+                // Store previous addresses
+                foreach ($preAddresses as $address) {
+                    PreviousAddress::create([
+                        'people_id' => $person->id,
+                        'address' => $address,
+                    ]);
+                }
+
+                // Store phone numbers
+                foreach ($phoneNumbers as $phoneNumber) {
+                    Phone::create([
+                        'people_id' => $person->id,
+                        'phone_no' => $phoneNumber,
+                    ]);
+                }
+
+                // Store AKAs
+                foreach ($akaLinks as $aka) {
+                    Aka::create([
+                        'people_id' => $person->id,
+                        'name' => $aka,
+                    ]);
+                }
+
+                // Store relatives
+                foreach ($relativeLinks as $relativeEntry) {
+                    $relative = $relativeEntry[0];
+                    Relative::create([
+                        'people_id' => $person->id,
+                        'name' => $relative['name'],
+                        'age' => $relative['age'],
+                    ]);
+                }
+
+                // Store associates
+                foreach ($associates as $associateEntry) {
+                    $associate = $associateEntry[0];
+                    Associate::create([
+                        'people_id' => $person->id,
+                        'name' => $associate['name'],
+                        'age' => $associate['age'],
+                    ]);
+                }
+
+                // Store education data
+                foreach ($education as $edu) {
+                    Education::create([
+                        'people_id' => $person->id,
+                        'data' => $edu,
+                    ]);
+                }
+
+                // Store work experience data
+                foreach ($workExp as $work) {
+                    Work::create([
+                        'people_id' => $person->id,
+                        'work_exp' => $work,
+                    ]);
+                }
+
+                // Store businesses data
+                foreach ($businesses as $business) {
+                    Business::create([
+                        'people_id' => $person->id,
+                        'name' => $business,
+                    ]);
+                }
             }
+            return "Success";
+        } else {
 
-            return $emails;
-        });
-        $emailAddresses = array_merge(...$emailDetails);
+            return "Error: Empty response received.";
+        }
+    }
 
-        // Extracting AKA
-        $akaLinks = $crawler->filter('#aka-links h3')->each(function ($akaNode) {
-            return $akaNode->text();
-        });
 
-        $relativeLinks = $crawler->filter('#relative-links .detail-box-content dl')->each(function ($dlNode) {
-            // Initialize an empty array to store merged data
-            $mergedData = [];
 
-            // Find all dt and dd pairs within this dl tag
-            $dtNodes = $dlNode->filter('dt');
-            $ddNodes = $dlNode->filter('dd');
 
-            // Iterate over dt nodes (relative names) and dd nodes (ages)
-            $dtNodes->each(function ($dtNode, $i) use ($ddNodes, &$mergedData) {
-                // Get the text content of the dt node (relative name)
-                $relativeName = $dtNode->text();
-
-                // Get the text content of the corresponding dd node (age)
-                $age = $ddNodes->eq($i)->text();
-
-                // Merge relative name and age together and add to the merged data array
-                $mergedData[] = [
-                    'name' => $relativeName,
-                    'age' => $age,
-                ];
-            });
-
-            return $mergedData;
-        });
-
-        $associates = $crawler->filter('#associate-links .detail-box-content dl')->each(function ($dlNode) {
-            // Initialize an empty array to store merged data
-            $mergedData = [];
-
-            // Find all dt and dd pairs within this dl tag
-            $dtNodes = $dlNode->filter('dt');
-            $ddNodes = $dlNode->filter('dd');
-
-            // Iterate over dt nodes (relative names) and dd nodes (ages)
-            $dtNodes->each(function ($dtNode, $i) use ($ddNodes, &$mergedData) {
-                // Get the text content of the dt node (relative name)
-                $relativeName = $dtNode->text();
-
-                // Get the text content of the corresponding dd node (age)
-                $ageString = $ddNodes->eq($i)->text();
-                preg_match('/Age (\d+)/', $ageString, $matches);
-                $age = $matches[1];
-
-                // Merge relative name and age together and add to the merged data array
-                $mergedData[] = [
-                    'name' => $relativeName,
-                    'age' => $age,
-                ];
-            });
-
-            return $mergedData;
-        });
-
-        $businesses = $crawler->filter('#business_section .detail-box-content dl dt')->each(function ($businessNode) {
-            return $businessNode->text();
-        });
-
-        $currentEmployment = $crawler->filter('#current_employment_section dl')->each(function ($empNode) {
-            return $empNode->text();
-        });
-
-        $workExp = $crawler->filter('#work_experience_section dl')->each(function ($workNode) {
-            return $workNode->text();
-        });
-
-        $education = $crawler->filter('#education_section dl')->each(function ($eduNode) {
-            return $eduNode->text();
-        });
-
-        $report = $crawler->filter('#background_report_section')->each(function ($reportNode) {
-            return $reportNode->text();
-        });
-
-        return response()->json($phoneNumbers);
+    public function viewData() {
+        $persons = Person::all();
+        return view('index', compact('persons'));
     }
 }

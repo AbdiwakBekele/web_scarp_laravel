@@ -9,14 +9,12 @@ return new class extends Migration {
      * Run the migrations.
      */
     public function up(): void {
-        Schema::create('person', function (Blueprint $table) {
+        Schema::create('people', function (Blueprint $table) {
             $table->id();
             $table->string('fullname');
             $table->string('age');
             $table->string('current_address');
             $table->string('current_employment');
-            $table->string('position');
-            $table->string('started_date');
             $table->text('report');
             $table->timestamps();
         });

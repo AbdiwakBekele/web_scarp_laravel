@@ -9,7 +9,7 @@ class Aka extends Model {
     use HasFactory;
 
     protected $fillable = [
-        'person_id',
+        'people_id',
         'name'
     ];
 }

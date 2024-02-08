@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::get('/addis-it', [ScraperController::class, 'scrapeIt']);
 
 Route::get('/test-it', [ScraperController::class, 'testScrap']);
+
+Route::get('/view-data', [ScraperController::class, 'viewData']);
